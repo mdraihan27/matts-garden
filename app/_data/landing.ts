@@ -3,18 +3,12 @@ export const HERO_SLIDES = [
     id: "precision",
     title: ["Precision Lawn Care", "With A Friendly Touch"],
     subtitle:
-      "Reliable mowing that keeps your yard fresh, clean, and naturally inviting.",
-  },
-  {
-    id: "curb",
-    title: ["Crisp Cuts", "Cleaner Curb Appeal"],
-    subtitle:
-      "Weekly or biweekly mowing that makes your lawn look effortless.",
+      "Reliable mowing that keeps your yard fresh and naturally inviting.",
   },
   {
     id: "tidy",
-    title: ["Mow. Trim. Tidy.", "Done The Right Way"],
-    subtitle: "We show up, clean up, and keep it simple.",
+    title: ["Simple Garden Care", "Done Properly"],
+    subtitle: "On time visits, straightforward service, and a tidy finish every time.",
   },
 ] as const;
 

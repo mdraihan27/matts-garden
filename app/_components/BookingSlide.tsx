@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function BookingSlide() {
   return (
-    <div className="w-full max-w-6xl px-4 py-10 text-center text-white sm:px-10 sm:py-12">
+    <div className="mx-auto w-full max-w-6xl px-4 py-10 text-center text-white sm:px-10 sm:py-12">
       <p className="font-heading text-2xl font-semibold tracking-tight text-white/90 sm:text-3xl">
         Not convinced yet?
       </p>

@@ -29,7 +29,7 @@ export function TestimonialsSlide() {
   const next = TESTIMONIALS[nextIndex];
 
   return (
-    <div className="w-full max-w-6xl rounded-3xl bg-transparent px-4 py-10 sm:px-10 sm:py-12">
+    <div className="mx-auto w-full max-w-6xl rounded-3xl bg-transparent px-4 py-10 sm:px-10 sm:py-12">
       <div className="text-center">
         <p className="text-xs font-semibold tracking-[0.35em] text-white/70">
           TESTIMONIALS

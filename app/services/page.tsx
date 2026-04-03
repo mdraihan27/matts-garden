@@ -46,7 +46,7 @@ const SERVICES: ServiceItem[] = [
     strapline: "From overgrown to ready to use.",
     description:
       "For neglected or overfilled outdoor spaces, Matt delivers complete garden clearance with an organized, step by step approach. We clear waste, restore access, and leave your garden ready for regular maintenance or a fresh redesign.",
-    imageSrc: "/assets/images/before-after/Before_1.jpg",
+    imageSrc: "/assets/images/garden-clearance.jpg",
     imageAlt: "Garden area before a full clearance",
     includes: [
       "Removal of weeds, debris, and unwanted growth",
@@ -66,7 +66,7 @@ const SERVICES: ServiceItem[] = [
     strapline: "Safe, tidy, and proportionate to your space.",
     description:
       "Matt handles light tree pruning and small tree work for residential properties, focusing on shape control, branch reduction, and safety improvements. The work is practical, neat, and tailored to garden scale.",
-    imageSrc: "/assets/images/before-after/After_2.jpg",
+    imageSrc: "/assets/images/small-tree-work.jpg",
     imageAlt: "Maintained garden area after small tree work",
     includes: [
       "Low level branch pruning and crown tidy up",
@@ -86,7 +86,7 @@ const SERVICES: ServiceItem[] = [
     strapline: "Hard surfaces restored without the guesswork.",
     description:
       "Matt provides jet washing for patios, pathways, and driveways to remove built up grime, algae, and weather staining. We use controlled pressure and methodical passes to clean effectively while protecting the surface.",
-    imageSrc: "/assets/images/before-after/After_3.jpg",
+    imageSrc: "/assets/images/jet-washing.jpg",
     imageAlt: "Cleaned outdoor hard surface after jet washing",
     includes: [
       "Patio, paving, and driveway pressure cleaning",
