@@ -136,3 +136,28 @@ body {
 .scroll-arrow:hover {
   color: white;
 }
+
+/* Custom Scrollbar for all scrollable areas */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-600);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-300);
+}
+
+/* Firefox compatibility */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-600) rgba(0, 0, 0, 0.15);
+}
