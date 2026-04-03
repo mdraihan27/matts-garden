@@ -1,28 +1,106 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const sectionStagger = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.11,
+      delayChildren: 0.06,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 26 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+    },
+  },
+};
+
+const panelReveal = {
+  hidden: { opacity: 0, y: 34, scale: 0.975, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.62,
+    },
+  },
+};
+
+const cardPop = {
+  hidden: { opacity: 0, y: 20, scale: 0.96 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const imageReveal = {
+  hidden: { opacity: 0, scale: 1.05, filter: "blur(10px)" },
+  show: {
+    opacity: 1,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.75,
+    },
+  },
+};
 
 export default function AboutUsPage() {
   return (
     <main className="relative h-screen h-[100svh] overflow-hidden">
       <div className="absolute inset-0 z-10 overflow-y-auto px-4 pb-20 pt-24 sm:px-10 sm:pt-32 md:px-16">
         <div className="mx-auto w-full max-w-6xl">
-          <div className="rounded-3xl border border-white/20 bg-black/35 p-6 text-white shadow-2xl backdrop-blur-xl sm:p-10">
-            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <motion.section
+            className="rounded-3xl border border-white/20 bg-black/35 p-6 text-white shadow-2xl backdrop-blur-xl sm:p-10"
+            variants={panelReveal}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+            >
               Meet{" "}
               <span className="font-heading">Matt</span>
-            </h1>
+            </motion.h1>
 
-            <p className="mt-4 max-w-3xl font-sans text-lg leading-relaxed text-white/92 sm:text-xl">
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-3xl font-sans text-lg leading-relaxed text-white/92 sm:text-xl"
+            >
               <span className="font-heading">Matt</span>’s Garden is built around
               one simple idea: show up on time, cut it clean, and leave every
               property looking better than we found it.
               <span className="font-heading"> Matt</span> is a seasoned lawn care
               pro who treats every yard like a front porch moment: the first
               impression your home makes.
-            </p>
+            </motion.p>
 
-            <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-              <div className="space-y-5">
-                <div className="overflow-hidden rounded-3xl border border-white/20 bg-black/25">
+            <motion.div
+              variants={sectionStagger}
+              className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
+            >
+              <motion.div variants={sectionStagger} className="space-y-5">
+                <motion.div
+                  variants={imageReveal}
+                  className="overflow-hidden rounded-3xl border border-white/20 bg-black/25"
+                >
                   <Image
                     src="/assets/images/matt.png"
                     alt="Matt, lawn care specialist"
@@ -31,9 +109,12 @@ export default function AboutUsPage() {
                     priority
                     className="h-[420px] w-full object-cover sm:h-[520px]"
                   />
-                </div>
+                </motion.div>
 
-                <div className="rounded-3xl border border-white/20 bg-black/35 p-6 text-white shadow-xl backdrop-blur-xl">
+                <motion.div
+                  variants={cardPop}
+                  className="rounded-3xl border border-white/20 bg-black/35 p-6 text-white shadow-xl backdrop-blur-xl"
+                >
                   <h2 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
                     Quick Bio
                   </h2>
@@ -44,11 +125,11 @@ export default function AboutUsPage() {
                     Whether it’s your first cut of the season or ongoing weekly
                     maintenance, he’ll keep your yard looking sharp.
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              <div className="space-y-8">
-                <section className="space-y-3">
+              <motion.div variants={sectionStagger} className="space-y-8">
+                <motion.section variants={fadeUp} className="space-y-3">
                   <h2 className="text-2xl font-semibold tracking-tight text-white">
                     Experience that shows in the details
                   </h2>
@@ -60,31 +141,46 @@ export default function AboutUsPage() {
                     builds up, where lines drift, and how seasonal height changes
                     affect your lawn.
                   </p>
-                </section>
+                </motion.section>
 
-                <section className="space-y-4">
+                <motion.section variants={fadeUp} className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight text-white">
                     Why clients trust us
                   </h2>
-                  <ul className="grid gap-3 font-sans text-sm leading-relaxed text-white/92 sm:text-base">
-                    <li className="rounded-2xl border border-white/20 bg-black/30 p-4">
+                  <motion.ul
+                    variants={sectionStagger}
+                    className="grid gap-3 font-sans text-sm leading-relaxed text-white/92 sm:text-base"
+                  >
+                    <motion.li
+                      variants={cardPop}
+                      className="rounded-2xl border border-white/20 bg-black/30 p-4"
+                    >
                       Consistent scheduling and communication
-                    </li>
-                    <li className="rounded-2xl border border-white/20 bg-black/30 p-4">
+                    </motion.li>
+                    <motion.li
+                      variants={cardPop}
+                      className="rounded-2xl border border-white/20 bg-black/30 p-4"
+                    >
                       Clean edging, clean lines, clean finish
-                    </li>
-                    <li className="rounded-2xl border border-white/20 bg-black/30 p-4">
+                    </motion.li>
+                    <motion.li
+                      variants={cardPop}
+                      className="rounded-2xl border border-white/20 bg-black/30 p-4"
+                    >
                       Respect for your property (and your time)
-                    </li>
-                  </ul>
-                </section>
+                    </motion.li>
+                  </motion.ul>
+                </motion.section>
 
-                <section className="space-y-4">
+                <motion.section variants={fadeUp} className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight text-white">
                     Our promise
                   </h2>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-2xl border border-white/20 bg-black/30 p-5">
+                  <motion.div variants={sectionStagger} className="grid gap-4 sm:grid-cols-2">
+                    <motion.div
+                      variants={cardPop}
+                      className="rounded-2xl border border-white/20 bg-black/30 p-5"
+                    >
                       <div className="text-sm font-semibold text-brand-100">
                         Consistency
                       </div>
@@ -92,8 +188,11 @@ export default function AboutUsPage() {
                         The same standards, every visit: clean cut, clean lines,
                         clean finish.
                       </p>
-                    </div>
-                    <div className="rounded-2xl border border-white/20 bg-black/30 p-5">
+                    </motion.div>
+                    <motion.div
+                      variants={cardPop}
+                      className="rounded-2xl border border-white/20 bg-black/30 p-5"
+                    >
                       <div className="text-sm font-semibold text-brand-100">
                         Respect
                       </div>
@@ -101,8 +200,11 @@ export default function AboutUsPage() {
                         We treat your property like it’s our own and leave it
                         looking better than before.
                       </p>
-                    </div>
-                    <div className="rounded-2xl border border-white/20 bg-black/30 p-5">
+                    </motion.div>
+                    <motion.div
+                      variants={cardPop}
+                      className="rounded-2xl border border-white/20 bg-black/30 p-5"
+                    >
                       <div className="text-sm font-semibold text-brand-100">
                         No pressure
                       </div>
@@ -110,8 +212,11 @@ export default function AboutUsPage() {
                         Clear communication and straightforward pricing, without
                         the hard sell.
                       </p>
-                    </div>
-                    <div className="rounded-2xl border border-white/20 bg-black/30 p-5">
+                    </motion.div>
+                    <motion.div
+                      variants={cardPop}
+                      className="rounded-2xl border border-white/20 bg-black/30 p-5"
+                    >
                       <div className="text-sm font-semibold text-brand-100">
                         Craft
                       </div>
@@ -119,12 +224,12 @@ export default function AboutUsPage() {
                         We focus on the details that make a lawn look intentionally
                         cared for.
                       </p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.section>
+              </motion.div>
+            </motion.div>
+          </motion.section>
         </div>
       </div>
     </main>

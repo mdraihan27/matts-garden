@@ -2,6 +2,53 @@
 
 import { useState } from "react";
 import { Mail, MapPinHouse, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+
+const sectionStagger = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.11,
+      delayChildren: 0.06,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 26 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+    },
+  },
+};
+
+const panelReveal = {
+  hidden: { opacity: 0, y: 34, scale: 0.975, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.62,
+    },
+  },
+};
+
+const cardPop = {
+  hidden: { opacity: 0, y: 20, scale: 0.96 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export default function BookSiteVisitPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,20 +62,40 @@ export default function BookSiteVisitPage() {
     <main className="relative h-screen h-[100svh] overflow-hidden">
       <div className="absolute inset-0 z-10 overflow-y-auto px-4 pb-20 pt-24 sm:px-10 sm:pt-32 md:px-16">
         <div className="mx-auto w-full max-w-6xl text-white">
-          <section className="rounded-3xl border border-white/20 bg-black/35 p-6 shadow-2xl backdrop-blur-xl sm:p-10">
-            <p className="text-xs font-semibold tracking-[0.35em] text-white/70">
+          <motion.section
+            className="rounded-3xl border border-white/20 bg-black/35 p-6 shadow-2xl backdrop-blur-xl sm:p-10"
+            variants={panelReveal}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="text-xs font-semibold tracking-[0.35em] text-white/70"
+            >
               BOOK A FREE SITE VISIT
-            </p>
-            <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="mt-3 font-heading text-4xl font-semibold tracking-tight sm:text-5xl"
+            >
               Tell Us About Your Property
-            </h1>
-            <p className="mt-4 max-w-3xl font-sans text-base leading-relaxed text-white/92 sm:text-lg">
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-3xl font-sans text-base leading-relaxed text-white/92 sm:text-lg"
+            >
               Fill in your details and we will arrange a quick on site visit to
               assess your garden and provide a clear quote.
-            </p>
+            </motion.p>
 
-            <div className="mt-8 grid gap-7 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="rounded-2xl border border-white/20 bg-black/35 p-5 sm:p-6">
+            <motion.div
+              variants={sectionStagger}
+              className="mt-8 grid gap-7 lg:grid-cols-[1.1fr_0.9fr]"
+            >
+              <motion.div
+                variants={cardPop}
+                className="rounded-2xl border border-white/20 bg-black/35 p-5 sm:p-6"
+              >
                 {!submitted ? (
                   <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="grid gap-4 sm:grid-cols-2">
@@ -150,10 +217,13 @@ export default function BookSiteVisitPage() {
                     </button>
                   </div>
                 )}
-              </div>
+              </motion.div>
 
-              <aside className="space-y-5">
-                <div className="rounded-2xl border border-white/20 bg-black/35 p-6">
+              <motion.aside variants={sectionStagger} className="space-y-5">
+                <motion.div
+                  variants={cardPop}
+                  className="rounded-2xl border border-white/20 bg-black/35 p-6"
+                >
                   <h2 className="font-heading text-2xl font-semibold text-white sm:text-3xl">
                     Reach Matt Directly
                   </h2>
@@ -186,9 +256,12 @@ export default function BookSiteVisitPage() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="rounded-2xl border border-white/20 bg-black/35 p-6">
+                <motion.div
+                  variants={cardPop}
+                  className="rounded-2xl border border-white/20 bg-black/35 p-6"
+                >
                   <h3 className="font-heading text-xl font-semibold text-white sm:text-2xl">
                     What Happens Next?
                   </h3>
@@ -197,10 +270,10 @@ export default function BookSiteVisitPage() {
                     <li>Matt contacts you to confirm timing.</li>
                     <li>On site assessment and quote follow.</li>
                   </ul>
-                </div>
-              </aside>
-            </div>
-          </section>
+                </motion.div>
+              </motion.aside>
+            </motion.div>
+          </motion.section>
         </div>
       </div>
     </main>

@@ -25,7 +25,7 @@ export const TESTIMONIALS = [
     quote:
       "Matt’s Garden has been mowing our lawn for months. Always on time, crisp edges, and they leave everything spotless. It’s the easiest part of our week.",
     name: "Jenny Wilson",
-    location: "Austin, TX",
+    location: "St Albans, Hertfordshire",
     initials: "JW",
     rating: 5,
   },
@@ -35,7 +35,7 @@ export const TESTIMONIALS = [
     quote:
       "Booked a free site visit and got a simple, no pressure plan. The weekly mow keeps our yard looking fresh, and the cleanup is genuinely great.",
     name: "Esther Howard",
-    location: "New York, NY",
+    location: "Watford, Hertfordshire",
     initials: "EH",
     rating: 5,
   },
@@ -45,7 +45,7 @@ export const TESTIMONIALS = [
     quote:
       "Fast, friendly, and consistent. They notice the little things, like trimming around beds and blowing off the driveway. Our curb appeal is back.",
     name: "Wade Warren",
-    location: "Denver, CO",
+    location: "Hemel Hempstead, Hertfordshire",
     initials: "WW",
     rating: 5,
   },
@@ -55,7 +55,7 @@ export const TESTIMONIALS = [
     quote:
       "Super easy to work with. Quick communication, tidy finish, and the lawn looks sharp every single time.",
     name: "Ava Martinez",
-    location: "San Diego, CA",
+    location: "Harpenden, Hertfordshire",
     initials: "AM",
     rating: 5,
   },
@@ -65,7 +65,7 @@ export const TESTIMONIALS = [
     quote:
       "We switched to Matt’s Garden for weekly mowing and it’s been smooth since day one. Clean edges and no mess left behind.",
     name: "Noah Kim",
-    location: "Seattle, WA",
+    location: "Hitchin, Hertfordshire",
     initials: "NK",
     rating: 5,
   },
@@ -75,7 +75,7 @@ export const TESTIMONIALS = [
     quote:
       "Respectful, friendly crew and a consistent schedule. Our yard finally looks like we actually have time.",
     name: "Mia Johnson",
-    location: "Charlotte, NC",
+    location: "Welwyn Garden City, Hertfordshire",
     initials: "MJ",
     rating: 4,
   },
@@ -85,7 +85,7 @@ export const TESTIMONIALS = [
     quote:
       "They caught a few problem spots and adjusted the mowing height for the season. Small details, big difference.",
     name: "Logan Parker",
-    location: "Nashville, TN",
+    location: "Stevenage, Hertfordshire",
     initials: "LP",
     rating: 5,
   },
@@ -95,7 +95,7 @@ export const TESTIMONIALS = [
     quote:
       "Fast service with a calm, no pressure vibe. The lawn is even, the lines look great, and the cleanup is solid.",
     name: "Zoe Carter",
-    location: "Phoenix, AZ",
+    location: "Hatfield, Hertfordshire",
     initials: "ZC",
     rating: 4,
   },
@@ -105,7 +105,7 @@ export const TESTIMONIALS = [
     quote:
       "Booked a free site visit and got a straightforward quote. The ongoing mowing has been reliable and stress free.",
     name: "Ethan Brooks",
-    location: "Columbus, OH",
+    location: "Hertford, Hertfordshire",
     initials: "EB",
     rating: 5,
   },
@@ -115,7 +115,7 @@ export const TESTIMONIALS = [
     quote:
       "Professional results without the hard sell. Our front yard looks clean and welcoming, week after week.",
     name: "Sophia Nguyen",
-    location: "Boston, MA",
+    location: "Bishops Stortford, Hertfordshire",
     initials: "SN",
     rating: 5,
   },
