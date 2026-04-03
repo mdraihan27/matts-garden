@@ -72,9 +72,15 @@ export default function AboutUsPage() {
             initial="hidden"
             animate="show"
           >
+            <motion.p
+              variants={fadeUp}
+              className="text-xs font-semibold tracking-[0.35em] text-white/70"
+            >
+              ABOUT US
+            </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+              className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
             >
               Meet{" "}
               <span className="font-heading">Matt</span>

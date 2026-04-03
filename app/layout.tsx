@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { LandingNav } from "./_components/LandingNav";
+import { VideoLoadGate } from "./_components/VideoLoadGate";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
@@ -37,15 +38,18 @@ export default function RootLayout({
           muted
           loop
           playsInline
+          preload="auto"
+          data-hero-video
         >
           <source src="/assets/videos/hero%20video.mp4" type="video/mp4" />
         </video>
 
         <div className="pointer-events-none fixed inset-0 bg-linear-to-b from-brand-800/72 via-brand-800/58 to-black/72" />
 
-        <LandingNav />
-
-        <div className="relative z-10">{children}</div>
+        <VideoLoadGate>
+          <LandingNav />
+          <div className="relative z-10">{children}</div>
+        </VideoLoadGate>
       </body>
     </html>
   );
