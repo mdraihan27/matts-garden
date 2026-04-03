@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Loader2 } from "lucide-react";
 
 type VideoLoadGateProps = Readonly<{
   children: React.ReactNode;
@@ -86,31 +87,9 @@ export function VideoLoadGate(props: VideoLoadGateProps) {
 
             <div className="relative">
               <div className="flex justify-center">
-                <svg
-                  width="108"
-                  height="72"
-                  viewBox="0 0 90 60"
-                  className="text-brand-100"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M8 30 C8 10 30 10 45 30 C60 50 82 50 82 30 C82 10 60 10 45 30 C30 50 8 50 8 30"
-                    pathLength="1"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeDasharray="0.22 0.78"
-                  >
-                    <animate
-                      attributeName="stroke-dashoffset"
-                      values="0;-1"
-                      dur="1.15s"
-                      repeatCount="indefinite"
-                    />
-                  </path>
-                </svg>
+                <div className="grid place-items-center rounded-full border border-white/15 bg-white/5 p-4 backdrop-blur-xl">
+                  <Loader2 className="h-10 w-10 animate-spin text-brand-100" aria-hidden="true" />
+                </div>
               </div>
 
               <div className="mt-4 text-xs font-semibold tracking-[0.35em] text-white/85">
